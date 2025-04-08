@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4a90e2">
+  <title>ShopEase - Modern E-commerce PWA</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/images/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ShopEase">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <a href="/">ShopEase</a>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="active">Home</a>
+          <a href="/categories">Categories</a>
+          <a href="/deals">Deals</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="nav-icons">
+          <div class="search-icon">
+            <i class="icon-search"></i>
+          </div>
+          <div class="cart-container">
+            <div class="cart-icon">
+              <i class="icon-cart"></i>
+              <span class="cart-badge hidden">0</span>
+            </div>
+            <div class="cart-dropdown">
+              <div id="cart-items">
+                <p>Your cart is empty</p>
+              </div>
+              <div class="cart-total">
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button class="cart-checkout-btn">Checkout</button>
+              </div>
+            </div>
+          </div>
+          <div class="user-icon">
+            <i class="icon-user"></i>
+          </div>
+        </div>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Shop Anytime, Anywhere</h1>
+          <p>Discover our latest collection with unbeatable prices.</p>
+          <button id="shop-now-btn" class="primary-btn">Shop Now</button>
+          <button id="install-button" class="secondary-btn hidden">Install App</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-categories">
+      <div class="container">
+        <h2>Browse Categories</h2>
+        <div class="categories-grid">
+          <div class="category-card">
+            <img src="/images/categories/electronics.jpg" alt="Electronics">
+            <h3>Electronics</h3>
+          </div>
+          <div class="category-card">
+            <img src="/images/categories/fashion.jpg" alt="Fashion">
+            <h3>Fashion</h3>
+          </div>
+          <div class="category-card">
+            <img src="/images/categories/home.jpg" alt="Home & Kitchen">
+            <h3>Home & Kitchen</h3>
+          </div>
+          <div class="category-card">
+            <img src="/images/categories/beauty.jpg" alt="Beauty">
+            <h3>Beauty</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <h2>Featured Products</h2>
+        <div id="products-container" class="products-grid">
+          <!-- Products will be loaded dynamically -->
+          <div class="loading-spinner">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-offers">
+      <div class="container">
+        <h2>Special Offers</h2>
+        <div class="offer-banner">
+          <div class="offer-content">
+            <h3>Summer Sale</h3>
+            <p>Get up to 40% off on selected items</p>
+            <button class="secondary-btn">View Offers</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="order-confirmation" class="hidden"></div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h3>ShopEase</h3>
+          <p>Your one-stop shop for all your needs.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="icon-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="icon-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="icon-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/categories">Categories</a></li>
+            <li><a href="/deals">Deals</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/shipping">Shipping Policy</a></li>
+            <li><a href="/returns">Returns & Exchanges</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <p>Subscribe to receive updates on new arrivals and special offers.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="primary-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShopEase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

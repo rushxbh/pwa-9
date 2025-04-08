@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4a90e2">
+  <title>You're Offline - ShopEase</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/images/icons/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="offline-page">
+  <div class="offline-container">
+    <div class="offline-content">
+      <img src="/images/offline.svg" alt="Offline" class="offline-icon">
+      <h1>You're Offline</h1>
+      <p>It looks like you've lost your internet connection. Don't worry - you can still access some features of ShopEase while offline.</p>
+      
+      <div class="offline-actions">
+        <button class="primary-btn" id="retry-connection">Retry Connection</button>
+        <a href="/" class="secondary-btn">Go to Homepage</a>
+      </div>
+      
+      <div class="offline-features">
+        <h2>What you can do offline:</h2>
+        <ul>
+          <li>Browse previously viewed products</li>
+          <li>View your cart</li>
+          <li>Create orders (they'll be synced when you're back online)</li>
+          <li>Check your wishlist</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check connection status periodically
+    function checkOnlineStatus() {
+      if (navigator.onLine) {
+        // If we're back online, reload the page
+        window.location.reload();
+      }
+    }
+
+    // Check connection every 5 seconds
+    setInterval(checkOnlineStatus, 5000);
+
+    // Add event listener to retry button
+    document.getElementById('retry-connection').addEventListener('click', function() {
+      window.location.reload();
+    });
+
+    // Also listen for the online event
+    window.addEventListener('online', function() {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>
